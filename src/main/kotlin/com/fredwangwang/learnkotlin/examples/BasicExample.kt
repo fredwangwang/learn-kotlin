@@ -26,6 +26,9 @@ class BasicExample(private val name: String) {
     // And it can appear multiple times, each init block will be call in the order of appearance.
     init {
         println("this is the second constructor")
+    }
+
+    fun examples() {
         this.controlFlow()
         this.nullable()
         this.createClass()
@@ -35,12 +38,12 @@ class BasicExample(private val name: String) {
     // the function with a single statement can be shorten as below
     private fun length(str: String): Int = str.length
 
-    fun welcome() {
+    private fun welcome() {
         println(welcomeMsg)
         println("My name is $name, it has $nameLength characters.\nDo you still recognize my name $upperReversedName?")
     }
 
-    fun controlFlow() {
+    private fun controlFlow() {
         if (nameLength > 10) println("$name is pretty long")
 
         // if/else is evaluated as expression in Kotlin, meaning the result of the evaluation can be
@@ -75,7 +78,7 @@ class BasicExample(private val name: String) {
 
     }
 
-    fun nullable() {
+    private fun nullable() {
         fun getNullableName(): String? = name
         fun printLenIfNotNull(a: String?) = println(if (a != null) "$a has length of ${a.length}" else "input is null ")
 
